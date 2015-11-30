@@ -1,0 +1,14 @@
+只针对Ubuntu
+
+vi /etc/default/grub
+将
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+改为
+GRUB_CMDLINE_LINUX_DEFAULT="text"
+即可
+
+！！！！！！！！！！！！！！
+修改完之后会直接进入命令行界面，但是再改回来却出现系统卡在黑屏阶段，tty1等可正常切换操作。
+尚不知道如何恢复到最初的直接进入图形界面状态，弄好之前只能使用命令行了。
+自己挖的坑含着泪也得埋了。
+！！！！！！！！！！！！！！
