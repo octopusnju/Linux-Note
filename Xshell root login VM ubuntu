@@ -1,0 +1,23 @@
+虚拟机使用NAT模式，使用ifconfig来查询虚拟机的ip地址。
+使用Xshell软件在SSH模式22端口连接VM内的Ubuntu Linux。
+此时会显示无法连接。
+需要在Ubuntu系统安装openssh-server：
+apt-get install openssh-server
+/etc/init.d/ssh start
+此时非root用户可以正常登录了，但若使用root用户登陆则会显示密码被拒绝。
+此时需要修改sshd的设置文档
+修改 vim /etc/ssh/sshd_config
+找到# Authentication:
+LoginGraceTime 120
+PermitRootLogin without passwd
+StrictModes yes
+改成
+# Authentication:
+LoginGraceTime 120
+PermitRootLogin yes
+StrictModes yes
+重启虚拟机
+
+参考链接：
+http://elan1986.iteye.com/blog/1579921
+http://www.imooc.com/qadetail/65395
