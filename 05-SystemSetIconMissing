@@ -1,0 +1,3 @@
+这是删除ibus导致的。
+解决方法：
+sudo apt-get install ubuntu-desktop
